@@ -13,7 +13,7 @@ const Users = () => {
     const fetchUsers = async () => {
       try {
         const responceData = await sendRequest(
-          "http://localhost:5000/api/users"
+          process.env.REACT_APP_BACKEND_URL + "/api/users"
         );
 
         setLoadedUsers(responceData.users);
@@ -22,7 +22,6 @@ const Users = () => {
 
     fetchUsers();
   }, [sendRequest]);
-
 
   return (
     <React.Fragment>
